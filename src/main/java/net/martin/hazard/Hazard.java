@@ -1,7 +1,10 @@
 package net.martin.hazard;
 
 import com.mojang.logging.LogUtils;
+import net.martin.hazard.item.ModCreativeModTabs;
+import net.martin.hazard.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -25,6 +28,9 @@ public class Hazard {
     public Hazard(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -44,6 +50,11 @@ public class Hazard {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.AIR_CAN);
+            event.accept(ModItems.RAW_AIR_CAN);
+
+        }
 
     }
 
