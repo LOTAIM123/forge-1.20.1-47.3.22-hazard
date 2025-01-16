@@ -1,6 +1,13 @@
 {
   "item.hazard.air_can": "Air can",
-  "item.hazard.raw_air_can": "Raw Air can",
+  "item.hazard.rubber": "Rubber",
+  "item.hazard.can": "Can",
+  "item.hazard.soup": "Soup",
 
-  "creativetab.hazard_tab": "Hazard Tab"
+  "item.hazard.hazmat_helmet": "Hazmat helmet",
+  "item.hazard.hazmat_chestplate": "Hazmat chestplate",
+  "item.hazard.hazmat_leggings": "Hazmat leggings",
+  "item.hazard.hazmat_boots": "Hazmat boots",
+
+  "creativetab.hazard_tab": "Hazard"
 }
