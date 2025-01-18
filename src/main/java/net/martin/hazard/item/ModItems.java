@@ -14,7 +14,9 @@ public class ModItems {
 
     //Item
     public static final RegistryObject<Item> CAN = ITEMS.register("can",
-            ()-> new Item(new Item.Properties()));
+            ()-> new Item(new Item.Properties().stacksTo(16)));
+    //public static final RegistryObject<Item> BATTERY = ITEMS.register("battery",
+    //        () -> new Item(new Item.Properties().stacksTo(1)));
 
     //material
     public static final RegistryObject<Item> RUBBER = ITEMS.register("rubber",
@@ -33,11 +35,10 @@ public class ModItems {
 
     //food
     public static final RegistryObject<Item> SOUP = ITEMS.register("soup",
-            ()-> new Item(new Item.Properties().food(ModFoods.SOUP)));
+            () -> new CustomSoupItem(new Item.Properties().food(ModFoods.SOUP).stacksTo(16)));
 
     //consumable
-    public static final RegistryObject<Item> AIR_CAN = ITEMS.register("air_can",
-            () -> new Item(new Item.Properties()));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

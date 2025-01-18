@@ -1,6 +1,7 @@
 package net.martin.hazard.item;
 
 import net.martin.hazard.Hazard;
+import net.martin.hazard.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -17,7 +18,6 @@ public class ModCreativeModTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.CAN.get()))
                     .title(Component.translatable("creativetab.hazard_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(ModItems.AIR_CAN.get());
                         pOutput.accept(ModItems.RUBBER.get());
                         pOutput.accept(ModItems.CAN.get());
                         pOutput.accept(ModItems.SOUP.get());
@@ -26,6 +26,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.HAZMAT_CHESTPLATE.get());
                         pOutput.accept(ModItems.HAZMAT_LEGGINGS.get());
                         pOutput.accept(ModItems.HAZMAT_BOOTS.get());
+                        //blocks
+                        pOutput.accept(ModBlocks.BATTERY.get());
                     })
                     .build());
 

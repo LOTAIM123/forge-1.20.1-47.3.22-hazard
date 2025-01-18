@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "hazard:item/soup",
-		"particle": "particle/soup"
+		"particle": "null"
 	},
 	"elements": [
 		{

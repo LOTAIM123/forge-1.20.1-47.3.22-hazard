@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"": {
+			"model": "hazard:block/battery_block"
+		}
+	}
+}

@@ -1,5 +1,5 @@
 {
-  "item.hazard.air_can": "Air can",
+  "item.hazard.battery": "Battery",
   "item.hazard.rubber": "Rubber",
   "item.hazard.can": "Can",
   "item.hazard.soup": "Soup",
@@ -8,6 +8,10 @@
   "item.hazard.hazmat_chestplate": "Hazmat chestplate",
   "item.hazard.hazmat_leggings": "Hazmat leggings",
   "item.hazard.hazmat_boots": "Hazmat boots",
+
+  "sounds.hazard.soup_drinking": "Soup drank",
+
+  "block.hazard.battery": "Battery",
 
   "creativetab.hazard_tab": "Hazard"
 }

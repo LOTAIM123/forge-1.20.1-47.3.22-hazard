@@ -1,0 +1,8 @@
+{
+  "soup_drinking": {
+    "subtitles": "sounds.hazard.soup_drinking",
+    "sounds": [
+      "hazard:soup_drinking"
+    ]
+  }
+}
