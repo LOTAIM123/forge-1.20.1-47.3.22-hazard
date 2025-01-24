@@ -57,7 +57,6 @@ public class Hazard {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.RUBBER);
             event.accept(ModItems.CAN);
-            event.accept(ModItems.SOUP);
 
         }
 

@@ -19,7 +19,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Hazard.MOD_ID);
 
     public static final RegistryObject<Block> BATTERY = registerBlock("battery",
-            ()-> new Block(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)));
+            ()-> new CustomBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK).dynamicShape().noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

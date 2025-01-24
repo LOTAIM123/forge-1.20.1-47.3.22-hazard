@@ -3,6 +3,7 @@ package net.martin.hazard.item;
 import net.martin.hazard.Hazard;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -15,8 +16,8 @@ public class ModItems {
     //Item
     public static final RegistryObject<Item> CAN = ITEMS.register("can",
             ()-> new Item(new Item.Properties().stacksTo(16)));
-    //public static final RegistryObject<Item> BATTERY = ITEMS.register("battery",
-    //        () -> new Item(new Item.Properties().stacksTo(1)));
+    /*public static final RegistryObject<Item> BATTERY = ITEMS.register("battery",
+            () -> new Item(new Item.Properties().stacksTo(1)));*/
 
     //material
     public static final RegistryObject<Item> RUBBER = ITEMS.register("rubber",
