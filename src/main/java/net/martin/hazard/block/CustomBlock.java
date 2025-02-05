@@ -13,11 +13,22 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.Mirror;
+
+import java.util.Map;
 
 public class CustomBlock extends Block {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    private static final VoxelShape SHAPE = makeShape();
+
+    private static final VoxelShape BASE_SHAPE = makeShape();
+    private static final Map<Direction, VoxelShape> SHAPES = Map.of(
+            Direction.NORTH, BASE_SHAPE,
+            Direction.SOUTH, rotateShape(BASE_SHAPE, Rotation.CLOCKWISE_180),
+            Direction.WEST, rotateShape(BASE_SHAPE, Rotation.COUNTERCLOCKWISE_90),
+            Direction.EAST, rotateShape(BASE_SHAPE, Rotation.CLOCKWISE_90)
+    );
 
     public CustomBlock(Properties properties) {
         super(properties);
@@ -26,17 +37,17 @@ public class CustomBlock extends Block {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext ctx) {
-        return SHAPE;
+        return SHAPES.get(state.getValue(FACING));
     }
 
     @Override
-    public BlockState rotate(BlockState state, net.minecraft.world.level.block.Rotation rotation) {
+    public BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
     @Override
-    public BlockState mirror(BlockState state, net.minecraft.world.level.block.Mirror mirror) {
-        return state.rotate(mirror.getRotation(state.getValue(FACING)));
+    public BlockState mirror(BlockState state, Mirror mirror) {
+        return state.setValue(FACING, mirror.mirror(state.getValue(FACING)));
     }
 
     @Override
@@ -51,10 +62,26 @@ public class CustomBlock extends Block {
 
     private static VoxelShape makeShape() {
         VoxelShape shape = Shapes.empty();
-        shape = Shapes.join(shape, Shapes.box(0.625, 0.1875, 0.375, 0.6875, 0.25, 0.4375), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.3125, 0.1875, 0.5, 0.75, 0.25, 0.6875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.375, 0.1875, 0.375, 0.4375, 0.25, 0.4375), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.3125, 0, 0.375, 0.75, 0.1875, 0.6875), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.5625, 0.375, 0.25, 0.8125, 0.4375, 0.375), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.125, 0.375, 0.4375, 0.875, 0.4375, 0.8125), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.1875, 0.375, 0.25, 0.4375, 0.4375, 0.375), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.125, 0, 0.25, 0.875, 0.375, 0.8125), BooleanOp.OR);
+        return shape;
+    }
+
+    private static VoxelShape rotateShape(VoxelShape shape, Rotation rotation) {
+        VoxelShape[] buffer = new VoxelShape[]{shape, Shapes.empty()};
+
+        for (int i = 0; i < rotation.ordinal(); i++) {
+            buffer[1] = Shapes.empty();
+            shape.forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) -> {
+                buffer[1] = Shapes.or(buffer[1], Shapes.box(
+                        1.0 - maxZ, minY, minX,
+                        1.0 - minZ, maxY, maxX
+                ));
+            });
+            shape = buffer[1];
+        }
         return shape;
     }
 }

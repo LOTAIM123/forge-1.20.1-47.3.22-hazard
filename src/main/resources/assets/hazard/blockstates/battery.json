@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "hazard:block/battery"
-    }
+    "facing=north": { "model": "hazard:block/battery" },
+    "facing=east": { "model": "hazard:block/battery", "y": 90 },
+    "facing=south": { "model": "hazard:block/battery", "y": 180 },
+    "facing=west": { "model": "hazard:block/battery", "y": 270 },
+    "facing=up": { "model": "hazard:block/battery", "x": -90 },
+    "facing=down": { "model": "hazard:block/battery", "x": 90 }
   }
 }

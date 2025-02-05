@@ -1,30 +1,23 @@
 package net.martin.hazard.item;
 
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 
-public class CustomSoupItem extends Item {
+public class HealItem extends Item {
 
     private boolean hasPlayedSound = false;
 
-    public CustomSoupItem(Properties properties) {
+    public HealItem(Properties properties) {
         super(properties);
     }
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.DRINK;
+        return UseAnim.BOW;
     }
 
-    @Override
+    /*@Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
 
@@ -47,5 +40,5 @@ public class CustomSoupItem extends Item {
         }
 
         return result; // Return the result from the superclass
-    }
+    }*/
 }

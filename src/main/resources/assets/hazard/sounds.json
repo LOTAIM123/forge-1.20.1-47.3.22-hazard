@@ -1,0 +1,8 @@
+{
+  "medkit_use": {
+    "subtitles": "sounds.hazard.medkit_use",
+    "sounds": [
+      "hazard:medkit_use"
+    ]
+  }
+}

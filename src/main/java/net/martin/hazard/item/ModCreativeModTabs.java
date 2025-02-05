@@ -20,6 +20,9 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.RUBBER.get());
                         pOutput.accept(ModItems.CAN.get());
+                        pOutput.accept(ModItems.BATTERY_ACID.get());
+                        pOutput.accept(ModItems.PLASTIC_SHEET.get());
+                        //food
                         pOutput.accept(ModItems.SOUP.get());
                         //armor
                         pOutput.accept(ModItems.HAZMAT_HELMET.get());
@@ -28,6 +31,9 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.HAZMAT_BOOTS.get());
                         //blocks
                         pOutput.accept(ModBlocks.BATTERY.get());
+                        //consumable
+                        pOutput.accept(ModItems.MEDKIT.get());
+                        pOutput.accept(ModItems.SPEED_SYRINGE.get());
                     })
                     .build());
 

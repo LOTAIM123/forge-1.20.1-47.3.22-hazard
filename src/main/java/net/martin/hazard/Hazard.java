@@ -5,8 +5,11 @@ import net.martin.hazard.block.ModBlocks;
 import net.martin.hazard.item.ModCreativeModTabs;
 import net.martin.hazard.item.ModItems;
 import net.martin.hazard.sound.ModSounds;
+import net.martin.hazard.worldgen.biome.ModTerrablender;
+import net.martin.hazard.worldgen.biome.surface.ModSurfaceRules;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -18,8 +21,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import terrablender.api.SurfaceRuleManager;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(Hazard.MOD_ID)
 public class Hazard {
     public static final String MOD_ID = "hazard";
@@ -35,21 +38,20 @@ public class Hazard {
 
         ModSounds.register(modEventBus);
 
+        ModTerrablender.registerBiomes();
+
 
         modEventBus.addListener(this::commonSetup);
 
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
-
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
-        //context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
+        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
     }
 
     // Add the example block item to the building blocks tab
@@ -57,6 +59,8 @@ public class Hazard {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.RUBBER);
             event.accept(ModItems.CAN);
+            event.accept(ModItems.BATTERY_ACID);
+            event.accept(ModItems.PLASTIC_SHEET);
 
         }
 

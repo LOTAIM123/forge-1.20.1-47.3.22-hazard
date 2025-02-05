@@ -1,8 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "hazard:item/can",
-		"particle": "hazard:item/can"
+		"0": "hazard:item/can"
 	},
 	"elements": [
 		{

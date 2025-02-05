@@ -21,6 +21,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RUBBER);
         simpleItem(ModItems.CAN);
         simpleItem(ModItems.SOUP);
+        simpleItem(ModItems.MEDKIT);
+        simpleItem(ModItems.SPEED_SYRINGE);
+        simpleItem(ModItems.BATTERY_ACID);
+        simpleItem(ModItems.PLASTIC_SHEET);
         simpleItem(ModItems.HAZMAT_BOOTS);
         simpleItem(ModItems.HAZMAT_LEGGINGS);
         simpleItem(ModItems.HAZMAT_CHESTPLATE);

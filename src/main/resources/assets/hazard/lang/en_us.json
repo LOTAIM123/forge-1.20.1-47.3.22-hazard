@@ -3,13 +3,17 @@
   "item.hazard.rubber": "Rubber",
   "item.hazard.can": "Can",
   "item.hazard.soup": "Soup",
+  "item.hazard.medkit": "Medkit",
+  "item.hazard.speed_syringe": "Syringe of ???",
+  "item.hazard.battery_acid": "Battery acid",
+  "item.hazard.plastic_sheet": "Plastic sheet",
 
   "item.hazard.hazmat_helmet": "Hazmat helmet",
   "item.hazard.hazmat_chestplate": "Hazmat chestplate",
   "item.hazard.hazmat_leggings": "Hazmat leggings",
   "item.hazard.hazmat_boots": "Hazmat boots",
 
-  "sounds.hazard.soup_drinking": "Soup drank",
+  "sounds.hazard.medkit_use": "Medkit used",
 
   "block.hazard.battery": "Battery",
 

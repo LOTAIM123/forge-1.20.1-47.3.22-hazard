@@ -2,6 +2,7 @@ package net.martin.hazard.datagen;
 
 import net.martin.hazard.Hazard;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -25,6 +26,8 @@ public class DataGenerators {
 
         generator.addProvider(event.includeClient(),new ModBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(),new ModItemModelProvider(packOutput, existingFileHelper));
+
+        generator.addProvider(event.includeServer(),new ModWorldGenProvider(packOutput, lookupProvider));
 
         ModBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
                 new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
