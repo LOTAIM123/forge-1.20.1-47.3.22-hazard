@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.Mirror;
 
 import java.util.Map;
 
-public class CustomBlock extends Block {
+public class BatteryVoxel extends Block {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
@@ -30,7 +30,7 @@ public class CustomBlock extends Block {
             Direction.EAST, rotateShape(BASE_SHAPE, Rotation.CLOCKWISE_90)
     );
 
-    public CustomBlock(Properties properties) {
+    public BatteryVoxel(Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }

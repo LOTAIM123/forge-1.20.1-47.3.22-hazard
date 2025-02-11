@@ -29,6 +29,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.HAZMAT_LEGGINGS);
         simpleItem(ModItems.HAZMAT_CHESTPLATE);
         simpleItem(ModItems.HAZMAT_HELMET);
+
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

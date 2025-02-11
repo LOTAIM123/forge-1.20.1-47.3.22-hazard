@@ -4,7 +4,7 @@
   "item.hazard.can": "Can",
   "item.hazard.soup": "Soup",
   "item.hazard.medkit": "Medkit",
-  "item.hazard.speed_syringe": "Syringe of ???",
+  "item.hazard.speed_syringe": "Syringe of BLUE",
   "item.hazard.battery_acid": "Battery acid",
   "item.hazard.plastic_sheet": "Plastic sheet",
 
@@ -16,6 +16,7 @@
   "sounds.hazard.medkit_use": "Medkit used",
 
   "block.hazard.battery": "Battery",
+  "block.hazard.plushy": "Plushy",
 
   "creativetab.hazard_tab": "Hazard"
 }

@@ -31,6 +31,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.HAZMAT_BOOTS.get());
                         //blocks
                         pOutput.accept(ModBlocks.BATTERY.get());
+                        pOutput.accept(ModBlocks.PLUSHY.get());
                         //consumable
                         pOutput.accept(ModItems.MEDKIT.get());
                         pOutput.accept(ModItems.SPEED_SYRINGE.get());

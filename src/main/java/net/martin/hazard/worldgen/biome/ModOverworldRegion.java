@@ -23,7 +23,7 @@ public class ModOverworldRegion extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint,
             ResourceKey<Biome>>> mapper) {
         this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaOverworldBuilder -> {
-            modifiedVanillaOverworldBuilder.replaceBiome(Biomes.FOREST, ModBiomes.LVL1_RADIATION);
+            modifiedVanillaOverworldBuilder.replaceBiome(Biomes.FOREST, ModBiomes.RAD1);
 
            /* VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
             // Overlap Vanilla's parameters with our own for our LVL1_RADIATION biome.

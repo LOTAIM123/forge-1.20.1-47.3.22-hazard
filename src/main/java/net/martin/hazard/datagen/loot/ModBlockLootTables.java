@@ -16,6 +16,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(ModBlocks.BATTERY.get());
+        this.dropSelf(ModBlocks.PLUSHY.get());
     }
 
     @Override

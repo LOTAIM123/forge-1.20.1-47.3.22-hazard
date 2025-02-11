@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=north": { "model": "hazard:block/plushy" },
+    "facing=east": { "model": "hazard:block/plushy", "y": 90 },
+    "facing=south": { "model": "hazard:block/plushy", "y": 180 },
+    "facing=west": { "model": "hazard:block/plushy", "y": 270 },
+    "facing=up": { "model": "hazard:block/plushy", "x": -90 },
+    "facing=down": { "model": "hazard:block/plushy", "x": 90 }
+  }
+}
