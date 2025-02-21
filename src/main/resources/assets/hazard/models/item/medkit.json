@@ -1,0 +1,109 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "builtin/entity",
+  "texture_size": [
+    32,
+    32
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        49.5,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        -1.5,
+        -2.25
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        49.5,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        -1.5,
+        -2.25
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -180,
+        42,
+        -180
+      ],
+      "translation": [
+        0,
+        0.75,
+        0
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -180,
+        42,
+        -180
+      ],
+      "translation": [
+        0,
+        0.75,
+        0
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        -3,
+        0
+      ]
+    },
+    "gui": {
+      "rotation": [
+        -160,
+        0,
+        -180
+      ],
+      "translation": [
+        0.75,
+        -2,
+        0
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        1.5
+      ]
+    },
+    "head": {
+      "translation": [
+        0,
+        6.25,
+        0
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        -90,
+        0,
+        0
+      ],
+      "translation": [
+        -0.5,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        2,
+        2
+      ]
+    }
+  },
+  "textures": {
+    "particle": "hazard:item/medkit"
+  }
+}

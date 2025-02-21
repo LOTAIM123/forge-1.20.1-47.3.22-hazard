@@ -12,9 +12,9 @@ public class ModFoods {
             .saturationMod(2)
             .build();
 
-    public static final FoodProperties MEDKIT = new FoodProperties.Builder()
+    /*public static final FoodProperties MEDKIT = new FoodProperties.Builder()
             .effect(new MobEffectInstance(MobEffects.REGENERATION, 120, 3),1)
-            .build();
+            .build();*/
 
     public static final FoodProperties SPEED_SYRINGE = new FoodProperties.Builder()
             .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 4),1)

@@ -35,6 +35,8 @@ public class ModCreativeModTabs {
                         //consumable
                         pOutput.accept(ModItems.MEDKIT.get());
                         pOutput.accept(ModItems.SPEED_SYRINGE.get());
+                        //test
+                        pOutput.accept(ModItems.ANIM_TEST_ITEM.get());
                     })
                     .build());
 
