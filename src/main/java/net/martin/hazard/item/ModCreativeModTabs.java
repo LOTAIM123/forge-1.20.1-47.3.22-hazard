@@ -32,9 +32,13 @@ public class ModCreativeModTabs {
                         //blocks
                         pOutput.accept(ModBlocks.BATTERY.get());
                         pOutput.accept(ModBlocks.PLUSHY.get());
+                        pOutput.accept(ModBlocks.HAZARDDIM_PORTAL.get());
                         //consumable
                         pOutput.accept(ModItems.MEDKIT.get());
                         pOutput.accept(ModItems.SPEED_SYRINGE.get());
+                        //weapons
+                        pOutput.accept(ModItems.MOLOTOV.get());
+                        pOutput.accept(ModItems.BASEBALL_BAT.get());
                         //test
                         pOutput.accept(ModItems.ANIM_TEST_ITEM.get());
                     })

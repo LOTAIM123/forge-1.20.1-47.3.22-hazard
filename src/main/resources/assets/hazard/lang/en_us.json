@@ -7,11 +7,14 @@
   "item.hazard.speed_syringe": "Syringe of BLUE",
   "item.hazard.battery_acid": "Battery acid",
   "item.hazard.plastic_sheet": "Plastic sheet",
+  "item.hazard.molotov": "Molotov",
+  "item.hazard.baseball_bat": "Baseball Bat",
 
   "item.hazard.hazmat_helmet": "Hazmat helmet",
   "item.hazard.hazmat_chestplate": "Hazmat chestplate",
   "item.hazard.hazmat_leggings": "Hazmat leggings",
   "item.hazard.hazmat_boots": "Hazmat boots",
+
 
   "sounds.hazard.medkit_use": "Medkit used",
 

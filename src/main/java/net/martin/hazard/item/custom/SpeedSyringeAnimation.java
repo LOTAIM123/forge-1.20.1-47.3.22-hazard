@@ -1,6 +1,5 @@
 package net.martin.hazard.item.custom;
 
-import net.martin.hazard.item.client.MedkitRenderer;
 import net.martin.hazard.item.client.SpeedSyringeRenderer;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.server.level.ServerLevel;

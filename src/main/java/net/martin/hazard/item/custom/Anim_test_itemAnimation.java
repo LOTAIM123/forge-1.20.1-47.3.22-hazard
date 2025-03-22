@@ -1,14 +1,16 @@
 package net.martin.hazard.item.custom;
 
 import net.martin.hazard.item.client.Anim_test_itemRenderer;
-import net.martin.hazard.item.client.MedkitRenderer;
+import net.martin.hazard.particle.ModParticles;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import software.bernie.geckolib.animatable.GeoItem;
@@ -34,6 +36,18 @@ public class Anim_test_itemAnimation extends Item implements GeoItem {
         SingletonGeoAnimatable.registerSyncedAnimatable(this);
     }
 
+    private void spawnParticles(UseOnContext pContext, BlockPos positionClicked) {
+        for(int i = 0; i < 360; i++) {
+            if(i % 20 == 0) {
+                pContext.getLevel().addParticle(ModParticles.FLAME_PARTICLES.get(),
+                        positionClicked.getX() + 0.5d, positionClicked.getY() + 1, positionClicked.getZ() + 0.5d,
+                        Math.cos(i) * 0.25d, 0.15d, Math.sin(i) * 0.25d);
+            }
+        }
+    }
+
+
+
     // Utilise the existing forge hook to define our custom renderer
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
@@ -52,8 +66,8 @@ public class Anim_test_itemAnimation extends Item implements GeoItem {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "Activation", 0, state -> PlayState.STOP)
-                .triggerableAnim("activate", ACTIVATE_ANIM));
+        controllers.add(new AnimationController<>(this, "Activation", 0, state -> PlayState.STOP));
+//                .triggerableAnim("activate", ACTIVATE_ANIM));
         // We've marked the "activate" animation as being triggerable from the server
     }
 

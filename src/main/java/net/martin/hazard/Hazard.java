@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.martin.hazard.block.ModBlocks;
 import net.martin.hazard.item.ModCreativeModTabs;
 import net.martin.hazard.item.ModItems;
+import net.martin.hazard.particle.ModParticles;
 import net.martin.hazard.sound.ModSounds;
 import net.martin.hazard.worldgen.biome.ModTerrablender;
 import net.martin.hazard.worldgen.biome.surface.ModSurfaceRules;
@@ -36,6 +37,8 @@ public class Hazard {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModParticles.register(modEventBus);
+
         ModSounds.register(modEventBus);
 
         ModTerrablender.registerBiomes();
@@ -50,7 +53,6 @@ public class Hazard {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
     }
 

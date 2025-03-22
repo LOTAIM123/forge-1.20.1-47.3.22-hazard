@@ -1,6 +1,7 @@
 package net.martin.hazard.block;
 
 import net.martin.hazard.Hazard;
+import net.martin.hazard.block.Custom.HazardDimPortalBlock;
 import net.martin.hazard.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -23,6 +24,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PLUSHY = registerBlock("plushy",
             ()-> new PlushyVoxel(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL).dynamicShape()));
+
+    public static final RegistryObject<Block> HAZARDDIM_PORTAL = registerBlock("hazarddim_portal",
+            ()-> new HazardDimPortalBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL).dynamicShape()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

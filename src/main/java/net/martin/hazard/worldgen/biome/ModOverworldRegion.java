@@ -1,4 +1,4 @@
-package net.martin.hazard.worldgen.biome;
+/*package net.martin.hazard.worldgen.biome;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
@@ -7,10 +7,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
-import terrablender.api.ParameterUtils;
 import terrablender.api.Region;
 import terrablender.api.RegionType;
-import terrablender.api.VanillaParameterOverlayBuilder;
 
 import java.util.function.Consumer;
 
@@ -23,9 +21,9 @@ public class ModOverworldRegion extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint,
             ResourceKey<Biome>>> mapper) {
         this.addModifiedVanillaOverworldBiomes(mapper, modifiedVanillaOverworldBuilder -> {
-            modifiedVanillaOverworldBuilder.replaceBiome(Biomes.FOREST, ModBiomes.RAD1);
+            modifiedVanillaOverworldBuilder.replaceBiome(Biomes.FOREST, Rad1Biome.RAD1);
 
-           /* VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
+            VanillaParameterOverlayBuilder builder = new VanillaParameterOverlayBuilder();
             // Overlap Vanilla's parameters with our own for our LVL1_RADIATION biome.
             // The parameters for this biome are chosen arbitrarily.
             new ParameterUtils.ParameterPointListBuilder()
@@ -38,8 +36,8 @@ public class ModOverworldRegion extends Region {
                     .build().forEach(point -> builder.add(point, ModBiomes.LVL1_RADIATION));
 
             // Add our points to the mapper
-            builder.build().forEach(mapper);*/
+            builder.build().forEach(mapper);
         });
 
     }
-}
+}*/
