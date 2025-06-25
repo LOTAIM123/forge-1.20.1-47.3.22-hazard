@@ -5,7 +5,7 @@ import net.martin.hazard.worldgen.biome.Rad1Biome;
 import net.martin.hazard.worldgen.biome.Rad2Biome;
 import net.martin.hazard.worldgen.biome.Rad3Biome;
 import net.martin.hazard.worldgen.biome.Rad4Biome;
-import net.martin.hazard.worldgen.dimension.ModDimensions;
+import net.martin.hazard.worldgen.dimension.HazardDimension;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-            .add(Registries.DIMENSION_TYPE, ModDimensions::bootstrapType)
+            .add(Registries.DIMENSION_TYPE, HazardDimension::bootstrapType)
             //.add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
             //.add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
             //.add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
@@ -27,7 +27,7 @@ public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
                 Rad3Biome.boostrap(context);
                 Rad4Biome.boostrap(context);
             })
-            .add(Registries.LEVEL_STEM, ModDimensions::bootstrapStem);
+            .add(Registries.LEVEL_STEM, HazardDimension::bootstrapStem);
 
     public ModWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(Hazard.MOD_ID));

@@ -1,0 +1,13 @@
+{
+	"name": "hazard:city/city_centre",
+	"fallback": "minecraft:empty",
+	"elements": [{
+		"weight": 1,
+		"element": {
+			"location": "hazard:city/cityblocks/starter_cityblock",
+			"processors": "minecraft:empty",
+			"projection": "rigid",
+			"element_type": "minecraft:single_pool_element"
+		}
+	}]
+}

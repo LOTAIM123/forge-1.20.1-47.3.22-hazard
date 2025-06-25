@@ -1,6 +1,6 @@
 package net.martin.hazard.block.Custom;
 
-import net.martin.hazard.worldgen.dimension.ModDimensions;
+import net.martin.hazard.worldgen.dimension.HazardDimension;
 import net.martin.hazard.worldgen.portal.ModTeleporter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
@@ -32,13 +32,13 @@ public class HazardDimPortalBlock extends Block {
     private void handleHazardPortal(Player player, BlockPos pPos) {
         if (player.level() instanceof ServerLevel serverlevel) {
             MinecraftServer minecraftserver = serverlevel.getServer();
-            ResourceKey<Level> resourcekey = player.level().dimension().equals(ModDimensions.HAZARD_DIM_TYPE) ?
-                    Level.OVERWORLD : ModDimensions.HAZARDDIM_LEVEL_KEY;
+            ResourceKey<Level> resourcekey = player.level().dimension().equals(HazardDimension.HAZARD_DIM_TYPE) ?
+                    Level.OVERWORLD : HazardDimension.HAZARDDIM_LEVEL_KEY;
 
 
             ServerLevel portalDimension = minecraftserver.getLevel(resourcekey);
             if (portalDimension != null && !player.isPassenger()) {
-                if(resourcekey == ModDimensions.HAZARDDIM_LEVEL_KEY) {
+                if(resourcekey == HazardDimension.HAZARDDIM_LEVEL_KEY) {
                     player.changeDimension(portalDimension, new ModTeleporter(pPos, true));
                 } else {
                     player.changeDimension(portalDimension, new ModTeleporter(pPos, false));
